@@ -1,0 +1,32 @@
+[project]
+name = "feedbin-mcp"
+version = "0.1.0"
+description = "MCP server for the Feedbin RSS reader"
+readme = "README.md"
+authors = [
+    { name = "Chris van Es", email = "cvanes@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp>=2.3.0",
+]
+
+[project.scripts]
+feedbin-mcp = "feedbin_mcp:main"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.2",
+]
+
+[tool.ruff]
+line-length = 140
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
